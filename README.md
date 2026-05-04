@@ -15,6 +15,7 @@ docker exec -it laravel_app bash
 cp .env.example .env
 php artisan key:generate
 php artisan migrate
+php l5-swagger:generate
 exit
 ```
  - Настройте .env файл, а именно поля: `YANDEX_TRACKER_OAUTH_TOKEN` и `YANDEX_TRACKER_X_CLOUD_ORG_ID`
