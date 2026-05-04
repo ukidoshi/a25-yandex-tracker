@@ -36,3 +36,5 @@ php artisan l5-swagger:generate
 Хотелось бы делать сборку xlsx на моей стороне, а не на Яндексе. Используя запрос https://yandex.ru/support/tracker/ru/api-ref/issues/search-issues именно с scroll в случае, если задач очень много в очереди.
 
 Получив задачи, собрать их в excel файл используя библиотеку https://github.com/aVadim483/fast-excel-writer По личному опыту - эта библиотека хорошо себя зарекомендовала.
+
+Изначально - так мною и предполагалось сделать, но ввиду позднего начала выполнения тестового задания и нехватки времени, я решил использовать готовый запрос https://yandex.ru/support/tracker/ru/api-ref/issues/create-report 
