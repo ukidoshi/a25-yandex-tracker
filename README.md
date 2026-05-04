@@ -29,6 +29,8 @@ php artisan l5-swagger:generate
 
 ![а25.png](backend/public/readme/а25.png)
 
+Документация бэка: `localhost:8000/docs`
+
 ## Желаемые доработки
 
 Хотелось бы делать сборку xlsx на моей стороне, а не на Яндексе. Используя запрос https://yandex.ru/support/tracker/ru/api-ref/issues/search-issues именно с scroll в случае, если задач очень много в очереди.

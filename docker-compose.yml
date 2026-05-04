@@ -10,9 +10,9 @@ services:
     working_dir: /var/www
     volumes:
       - ./backend:/var/www
-    depends_on:
-      - mysql
-      - redis
+#    depends_on:
+#      - mysql
+#      - redis
     networks:
       - app-network
 
@@ -45,30 +45,30 @@ services:
     networks:
       - app-network
 
-  mysql:
-    image: mysql:8.0
-    container_name: mysql_db
-    restart: unless-stopped
-    environment:
-      MYSQL_DATABASE: laravel
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_PASSWORD: secret
-      MYSQL_USER: laravel
-    ports:
-      - "3306:3306"
-    volumes:
-      - dbdata:/var/lib/mysql
-    networks:
-      - app-network
+#  mysql:
+#    image: mysql:8.0
+#    container_name: mysql_db
+#    restart: unless-stopped
+#    environment:
+#      MYSQL_DATABASE: laravel
+#      MYSQL_ROOT_PASSWORD: root
+#      MYSQL_PASSWORD: secret
+#      MYSQL_USER: laravel
+#    ports:
+#      - "3306:3306"
+#    volumes:
+#      - dbdata:/var/lib/mysql
+#    networks:
+#      - app-network
 
-  redis:
-    image: redis:alpine
-    container_name: redis_cache
-    restart: unless-stopped
-    ports:
-      - "6379:6379"
-    networks:
-      - app-network
+#  redis:
+#    image: redis:alpine
+#    container_name: redis_cache
+#    restart: unless-stopped
+#    ports:
+#      - "6379:6379"
+#    networks:
+#      - app-network
 
 networks:
   app-network:
