@@ -11,12 +11,11 @@
  - Клонируйте репу и из `a25-yandex-tracker` запустите след команды:
 ```shell
 docker-compose up -d --build
-docker exec -it laravel_app bash
+cd backend
+composer install
 cp .env.example .env
 php artisan key:generate
-php artisan migrate
-php l5-swagger:generate
-exit
+php artisan l5-swagger:generate
 ```
  - Настройте .env файл, а именно поля: `YANDEX_TRACKER_OAUTH_TOKEN` и `YANDEX_TRACKER_X_CLOUD_ORG_ID`
 
@@ -29,3 +28,9 @@ exit
 Фронт посылает запрос с фильтрами задач на бэк для получения <u>id отчета</u>, который формируется на стороне яндекса. Затем с этим id создается ссылка по типу `https://tracker.yandex.ru/ajax/v2/metaEntities/reports/<id_отчета>/attachments` который в последвии отправляется на браузер пользователя для скачивания.
 
 ![а25.png](backend/public/readme/а25.png)
+
+## Желаемые доработки
+
+Хотелось бы делать сборку xlsx на моей стороне, а не на Яндексе. Используя запрос https://yandex.ru/support/tracker/ru/api-ref/issues/search-issues именно с scroll в случае, если задач очень много в очереди.
+
+Получив задачи, собрать их в excel файл используя библиотеку https://github.com/aVadim483/fast-excel-writer По личному опыту - эта библиотека хорошо себя зарекомендовала.
